@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Car_Care.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    thead {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+    }
+
+    tbody {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .btn-primary {
+        width: 80px;
+    }
+
+    .btn-info {
+        width: 80px;
+    }
+
+    .btn-info {
+        width: 80px;
+    }
+
+    @@media(max-width:1024px) {
+        .btn-primary {
+            margin-top: 5px;
+        }
+
+        .btn-info {
+            margin-top: 5px;
+        }
+
+        .btn-danger {
+            margin-top: 5px;
+        }
+    }
+    h2{
+        font-size:30px;
+        font-family:Arial;
+        font-weight:bold;
+        justify-content:center;
+    }
+</style>
+
+<h2>Employee Details</h2>
+@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary", @style = "width:200px;font-weight:bold;font-size:20px;text-align:center;padding:20px;justfy-conten:right;" })
+<div class="container">
+    <div class="row">
+        <table class="table table-responsive">
+
+            <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employee_Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mobile_Number)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Emp_Id_Proof)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Salary)
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Employee_Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Mobile_Number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Emp_Id_Proof)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Salary)
+                        </td>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-primary" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-info" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

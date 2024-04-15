@@ -1,0 +1,79 @@
+﻿@model Car_Care.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+    dt {
+        font-size: 30px;
+        color: black;
+        font-weight: bold;
+        display: flex;
+    }
+    dd {
+        font-size: 20px;
+        display: flex;
+        color: coral;
+        font-weight: bold;
+    }
+    td {
+        font-size: 25px;
+        color: black;
+        font-weight:bold;
+        background-color:bisque;
+    }
+   
+     </style>
+      <h1 style="text-align:center;font-stretch:condensed;font-size:40px;font-weight:bold;background-color:aquamarine">Employee Details</h1><br /><br />
+     <table class="table table-striped" style="width:50%;" align="center">
+    <tbody>
+      
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Name)</td>            
+                <td>@Html.Label(":")</td>
+                <td class="Emp"> @Html.DisplayFor(model => model.Name)</td>
+            </tr>
+               <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Employee_Id)
+                </td>
+                   <td>@Html.Label(":")</td>
+                   <td class="Emp">@Html.DisplayFor(model => model.Employee_Id)</td>
+               </tr>
+               <tr>
+                   <td>
+                       @Html.DisplayNameFor(model => model.Mobile_Number)
+                   </td>
+                   <td>@Html.Label(":")</td>
+                   <td class="Emp">@Html.DisplayFor(model => model.Mobile_Number)</td>
+               </tr>
+               <tr>
+                   <td>
+                       @Html.DisplayNameFor(model => model.Emp_Id_Proof)
+                   </td>
+                   <td>@Html.Label(":")</td>
+                   <td class="Emp">@Html.DisplayFor(model => model.Emp_Id_Proof)</td>
+               </tr>
+               <tr>
+                   <td>
+                       @Html.DisplayNameFor(model => model.Address)
+                   </td>
+                   <td>@Html.Label(":")</td>
+                   <td class="Emp">@Html.DisplayFor(model => model.Address)</td>
+               </tr>
+               <tr>
+                   <td>
+                       @Html.DisplayNameFor(model => model.Salary)
+                   </td>
+                   <td>@Html.Label(":")</td>
+                   <td class="Emp">@Html.DisplayFor(model => model.Salary)</td>
+               </tr>
+    </tbody>
+</table>
+<p class="text-center">
+    @Html.ActionLink("Edit", "Edit", "Employees", new { id = Model.id }, new { @class = "btn btn-primary", @style = "width:150px;font-weight:bold;font-size:20px;text-align:center;padding:20px;justfy-conten:right;" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning", @style = "width:150px;font-weight:bold;font-size:20px;text-align:center;padding:20px;justfy-conten:right;" })
+</p>
